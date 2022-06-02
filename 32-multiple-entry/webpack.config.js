@@ -8,7 +8,7 @@ module.exports = {
     album: './src/album.js'
   },
   output: {
-    filename: '[name].bundle.js'
+    filename: '[name].bundle.js' // [name]是入口名称
   },
   module: {
     rules: [
@@ -27,13 +27,13 @@ module.exports = {
       title: 'Multi Entry',
       template: './src/index.html',
       filename: 'index.html',
-      chunks: ['index']
+      chunks: ['index'] // 指定使用index.bundle.js
     }),
     new HtmlWebpackPlugin({
       title: 'Multi Entry',
       template: './src/album.html',
       filename: 'album.html',
-      chunks: ['album']
+      chunks: ['album'] // 指定使用album.bundle.js
     })
   ]
 }
